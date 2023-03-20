@@ -16,11 +16,13 @@ jobs:
           username: ${{ secrets.REMOTE_USERNAME }}
           key: ${{ secrets.REMOTE_KEY }}
           source: "instruction.txt,instruction.txt"
-          target: "/root"
+          target: "/home/ubuntu"
+
       - name: Connect to remote server
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USERNAME }}
           key: ${{ secrets.REMOTE_KEY }}
-          script: "docker run -i -v $(pwd):/chisel rizaudo/chisel3-docker /bin/bash < test.sh >/dev/null &"
+          script: |
+            "docker run -i -v $(pwd):/chisel rizaudo/chisel3-docker /bin/bash < test.sh >/dev/null &"
