@@ -25,4 +25,5 @@ jobs:
           username: ${{ secrets.REMOTE_USERNAME }}
           key: ${{ secrets.REMOTE_KEY }}
           script: |
-            "docker run -i -v $(pwd):/chisel rizaudo/chisel3-docker /bin/bash < ${{ secrets.RUN_SCRIPT }}"
+            "ls;pwd"
+            "docker run -i -v $(pwd):/chisel rizaudo/chisel3-docker /bin/bash < script.sh"
