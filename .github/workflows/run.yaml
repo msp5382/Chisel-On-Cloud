@@ -24,5 +24,4 @@ jobs:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USERNAME }}
           key: ${{ secrets.REMOTE_KEY }}
-          script: |
-            "docker run -i -v $(pwd):/chisel rizaudo/chisel3-docker /bin/bash < test.sh >/dev/null &"
+          script: "docker run -i -v $(pwd):/chisel rizaudo/chisel3-docker /bin/bash < test.sh >/dev/null &"
