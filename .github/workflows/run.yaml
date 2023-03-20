@@ -25,7 +25,7 @@ jobs:
           username: ${{ secrets.REMOTE_USERNAME }}
           key: ${{ secrets.REMOTE_KEY }}
           script: |
-            "ls"
+            "sudo -s"
             "pwd"
             "echo ${{secrets.RUN_SCRIPT}} | base64 -d > script.sh"
             "bash -c \"docker run -i -v $(pwd):/chisel rizaudo/chisel3-docker /bin/bash < script.sh\""
