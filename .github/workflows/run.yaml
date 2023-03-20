@@ -17,7 +17,7 @@ jobs:
       #     key: ${{ secrets.REMOTE_KEY }}
       #     source: "instruction.txt,instruction.txt"
       #     target: "/root"
-
+      - run: echo ${{ secrets.REMOTE_HOST }} | sed -e 's/\(.\)/\1 /g'
       - name: Connect to remote server
         uses: appleboy/ssh-action@master
         with:
