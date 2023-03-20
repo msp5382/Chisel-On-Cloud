@@ -13,9 +13,9 @@ jobs:
       - run: "pwd"
       - name: pull and run chisel
         run: docker run -i -v $(pwd):/chisel rizaudo/chisel3-docker /bin/bash < build.sh
-      - name: zip release
-        run: zip -r dist
       - run: "ls"
+      - name: zip release
+        run: zip -r ./dist
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
